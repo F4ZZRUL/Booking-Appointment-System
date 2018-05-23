@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Putra Specialist Hospital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,400italic,600italic,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="header">
+  <div class="logo">
+    <a href="#">Putra<span> Specialist<span> Hospital</span></a>
+  </div>
+  <div class="Logout">
+    <a href="logout.php" style="color: #fff"><img src="images/logout.png">  Logout</a>
+  </div>
+  
+</div>
+
+
+<a class="mobile">MENU</a>
+
+
+<div id="container">
+
+  <div class="sidebar">
+
+    <ul id="nav">
+      <li><a class="selected" href="home.html"><img src="images/home.png">    Dashboard</a></li>
+      <li><a href="ManagePatient.php"><img src="images/medical-history.png">  Manage Patient</a> </li>
+      <li><a href="Booking.php"><img src="images/question.png"> Manage Booking</a></li>
+      <li><a href="feedback.php"><img src="images/chat.png"> User Feedback</a></li>
+      <li><a href="http://localhost/web/chat/index.php"><img src="images/chat.png">LiveChat</a></li>
+    </ul>
+    
+  </div>
+
+  <div class="content">
+    
+    <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="images/slide1.jpg" style="width:1000px;height:300px">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="images/slide2.jpg" style="width:1000px;height:300px">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="images/slide3.jpg" style="width:1000px;height:300px">
+  
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+
+  
+
+  
+    <h1>Dashboard</h1>
+   
+
+  </div>
+
+
+</div><!-- #container -->
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+     $("a.mobile").click(function(){
+      $(".sidebar").slideToggle('fast');
+     });
+
+    window.onresize = function(event) {
+      if($(window).width() > 480){
+        $(".sidebar").show();
+      }
+    };
+
+
+  });
+
+</script>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+div.Fazz {
+    width: 100%;
+
+    
+}
+
+header, footer {
+    
+    padding: 1em;
+    color: white;
+    background-color: #94d7d2;
+    clear: left;
+    text-align: left;
+}
+
+nav {
+    height: 1000px;
+    float: left;
+    width: 250px;
+    margin: 0;
+    padding: 1em;
+    background-color: #111;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    height: 100%;
+}
+   
+nav ul a {
+   padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #818181;
+    display: block;
+}
+
+nav ul a:hover {
+    color: #f1f1f1;
+}
+
+article {
+    margin-left: 170px;
+    
+    overflow: hidden;
+}
+

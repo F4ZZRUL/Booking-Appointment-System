@@ -1,0 +1,434 @@
+<?php
+/* Displays user information and some useful messages */
+session_start();
+
+// Check if user is logged in using the session variable
+if ( $_SESSION['logged_in'] != 1 ) {
+  $_SESSION['message'] = "You must log in before viewing your profile page!";
+  header("location: login/error.php");    
+}
+else {
+    // Makes it easier to read
+    $first_name = $_SESSION['first_name'];
+    $last_name = $_SESSION['last_name'];
+    $email = $_SESSION['email'];
+    
+}
+?> 
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+<title>Putra Speacialist Hospital</title>
+<!-- for-meta-tags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-meta-tags-->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/services.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/ziehharmonika.css" rel="stylesheet" type="text/css">
+<link href="css/team.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+
+<!--//tags -->
+	<link href="css1/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/appointment_style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/font-awesome.css" rel="stylesheet">
+	<!-- //for bootstrap working -->
+<link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+</head>
+	
+<body>
+<div class="main" id="home">
+<!-- banner -->
+		<div class="header_agileinfo">
+						<div class="w3_agileits_header_text">
+							<ul class="top_agile_w3l_info_icons">
+									<li><i class="fa fa-home" aria-hidden="true"></i>Putra Specialist Hospital</li>
+									<li class="second"><i class="fa fa-phone" aria-hidden="true"></i>+606 - 283 5888</li>
+									
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a>Corperate_Strategy@psh-group.com</a></li>
+								</ul>
+
+						</div>
+						<div class="dropdown" style="float: right;">
+                <button class="btn btn-primary dropdown-toggle btn-sm" type="button" data-toggle="dropdown"><span class='glyphicon glyphicon-user' aria-hidden='true'></span> <?php echo $email . " ($first_name)"; ?>
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#logout" data-toggle="modal"><span class='glyphicon glyphicon-log-out' aria-hidden='true'></span> Logout</a></li>
+                 </ul>
+</div>
+						<div class="agileinfo_social_icons">
+							<ul class="agileits_social_list">
+								<li><a href="https://www.facebook.com/pshmsb/?rf=548865978506133" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+			</div>				
+
+		<div class="header-bottom">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index.html"><span>H</span>ealth <i class="fa fa-plus" aria-hidden="true"></i> <p>Putra Specialist Hospital</p></a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--sebastian">
+					<ul id="m_nav_list" class="m_nav menu__list">
+						<li class="m_nav_item menu__item" id="m_nav_item_1"> <a href="Home.php" class="menu__link"> Home </a></li>
+						<li class="m_nav_item menu__item menu__item--current" id="moble_nav_item_2"> <a href="about.php" class="menu__link"> About Us </a> </li>		
+						<li class="m_nav_item menu__item" id="moble_nav_item_4"> <a href="Booking.php" class="menu__link">Appointment  </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_4"> <a href="department.php" class="menu__link">Department </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_5"> <a href="gallery.php" class="menu__link">Gallery</a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6 dropdown"> <a href="#" class="menu__link dropdown-toggle" data-toggle="dropdown"> Service <b class="caret"></b></a> 
+
+							<ul class="dropdown-menu agile_short_dropdown">
+									<li><a href="Room.php">Room</a></li>
+									<li><a href="Specialists.php">Medical Specialist</a></li>
+									<li><a href="admission.php">Admission & Discharge</a></li>
+									<li><a href="insurance.php">Insurance</a></li>
+							</ul>
+
+						</li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="contact1.php" class="menu__link"> Feedback </a> </li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="chat/index.php" class="menu__link"> Chat </a> </li>
+					</ul>
+				</nav>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+	 </div>
+</div>
+<!-- banner -->
+<!-- banner1 -->
+	<div class="banner1 jarallax">
+		<div class="container">
+		</div>
+	</div>
+
+	<div class="services-breadcrumb">
+		<div class="container">
+			<ul>
+				<li><a href="index.html">Home</a><i>|</i></li>
+				<li>Medical Specialists</li>
+			</ul>
+		</div>
+	</div>
+<!-- //banner1 -->
+
+<!-- team -->
+<div class="team">
+	<div class="container">
+		<h3 class="heading-agileinfo">Medical Specialists<span>We offer extensive medical procedures to patients.</span></h3>
+		<div class="teamgrids">
+			<div class="col-md-3 teamgrid1">
+				<img src="images/D1.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Datuk Dr. Nor Izham B Aziz</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Cardiology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4567</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/D2.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Dr. Lee Yew Ming</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Cardiothoracic</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4568</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example1.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/D3.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Dr. Pieus Suresh Doshi</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>General Surgery</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4569</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example2.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/Dr4.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Dr. Mohd Zaki Bin Ibrahim</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Otorhinolaryngology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4570</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example3.com</a></p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //team -->
+
+<!-- team -->
+<div class="team">
+	<div class="container">
+		
+		<div class="teamgrids">
+			<div class="col-md-3 teamgrid1">
+				<img src="images/Dr5.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Datuk Dr. Durshan Kumar Khanna</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Otorhinolaryngology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4571</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/Dr6.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Datuk Dr. Zakriya Mahamooth</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Urology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4572</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example1.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/Dr7.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Dr. Ish Aireen Binti Dalib</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Obstetrics and Gynaecology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4573</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example2.com</a></p>
+				</div>
+			</div>
+			<div class="col-md-3 teamgrid1">
+				<img src="images/Dr8.png" class="img-responsive" alt="" />
+				<div class="teaminfo">
+					<h3>Dr. Nik Ahmad Eid B Nik Mahmood</h3>
+					
+					<p><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Cardiology</p>
+					<p><i class="fa fa-phone" aria-hidden="true"></i> +02 133 4574</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@example.com"> mail@example3.com</a></p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!-- //team -->
+
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<!--<h4>Subscribe to <span>Newsletter</span></h4>
+			<form action="#" method="post">
+				<input type="email" name="Email" placeholder="Enter Your Email..." required="">
+				<input type="submit" value="Send">-->
+			</form>
+			<div class="agile_footer_copy">
+				<div class="w3agile_footer_grids">
+					<div class="col-md-4 w3agile_footer_grid">
+						<h3>About Us</h3>
+						<p>Centrally located in the heart of Melaka, Putra Specialist Hospital is Melaka’s premier hospital, a center of excellence in specialty medicine, and a world leader in medical tourism. Putra Specialist Hospital Melaka Sdn. Bhd, started its operations as The Southern Hospital in 1995.</span></p>
+					</div>
+					<div class="col-md-4 w3agile_footer_grid">
+						<h3>Contact Info</h3>
+						<ul>
+							<li><i class="fa fa-map-marker" aria-hidden="true"></i>Putra Specialist Hospital <span>Melaka.</span></li>
+							<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">Corperate_Strategy@psh-group.com</a></li>
+							<li><i class="fa fa-phone" aria-hidden="true"></i>+606 - 283 5888</li>
+						</ul>
+					</div>
+					<div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
+						<h3>Navigation</h3>
+						<ul>
+							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="gallery.html">Department</a></li>
+							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="appointment.html">Appointment</a></li>
+							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="about.html">About</a></li>
+							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="contact.html">Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="w3_agileits_copy_right_social">
+				<div class="col-md-6 agileits_w3layouts_copy_right">
+					<p>&copy; 2018 Putra Specialist Hospital. All rights reserved | Design by Fazrul</p>
+				</div>
+				<div class="col-md-6 w3_agile_copy_right">
+					<ul class="agileits_social_list">
+								<li><a href="https://www.facebook.com/pshmsb/?rf=548865978506133" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								
+							</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+ <!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>
+
+<script src="js/ziehharmonika.js"></script>
+<script>
+$(document).ready(function() {
+		$('.ziehharmonika').ziehharmonika({
+			collapsible: true,
+			prefix: ''
+		});
+	});
+</script>
+<!-- stats -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.countup.js"></script>
+		<script>
+			$('.counter').countUp();
+		</script>
+<!-- //stats -->
+	<!-- Gallery-Tab-JavaScript -->
+			<script src="js/cbpFWTabs.js"></script>
+			<script>
+				(function() {
+					[].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+						new CBPFWTabs( el );
+					});
+				})();
+			</script>
+		<!-- //Gallery-Tab-JavaScript -->
+
+
+<!-- Swipe-Box-JavaScript -->
+			<script src="js/jquery.swipebox.min.js"></script> 
+				<script type="text/javascript">
+					jQuery(function($) {
+						$(".swipebox").swipebox();
+					});
+			</script>
+		<!-- //Swipe-Box-JavaScript -->
+<!-- bootstrap-pop-up -->
+	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					Health Plus
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<img src="images/g9.jpg" alt=" " class="img-responsive" />
+						<p>Ut enim ad minima veniam, quis nostrum 
+							exercitationem ullam corporis suscipit laboriosam, 
+							nisi ut aliquid ex ea commodi consequatur? Quis autem 
+							vel eum iure reprehenderit qui in ea voluptate velit 
+							esse quam nihil molestiae consequatur, vel illum qui 
+							dolorem eum fugiat quo voluptas nulla pariatur.
+							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
+								esse quam nihil molestiae consequatur.</i></p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+<!-- //bootstrap-pop-up -->
+<!--Logout Modal -->
+            <div id="logout" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-md">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Logout</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="delete_id" value="<?php echo $id; ?>">
+                            <p>
+                                <div class="alert alert-danger">Are you Sure you want to logout <strong><?php echo $_SESSION['email']; ?>?</strong></p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="login/index.php"><button type="button" class="btn btn-danger">YES </button></a>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!-- flexSlider -->
+	<script defer src="js/jquery.flexslider.js"></script>
+	<script type="text/javascript">
+		$(window).load(function(){
+		  $('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			  $('body').removeClass('loading');
+			}
+		  });
+		});
+  </script>
+<!-- //flexSlider -->
+
+
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+			<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+	
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

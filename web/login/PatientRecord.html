@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Putra Specialist Hospital</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/admin.css">
+<link rel="stylesheet" type="text/css" href="css/slider.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,600,400italic,600italic,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div id="header">
+  <div class="logo">
+    <a href="#">Putra<span> Specialist<span> Hospital</span></a>
+  </div>
+  <div class="Logout">
+    <a href="logout.php" style="color: #fff"><img src="images/logout.png">  Logout</a>
+  </div>
+  
+  
+</div>
+
+
+<a class="mobile">MENU</a>
+
+
+<div id="container">
+
+  <div class="sidebar">
+
+    <ul id="nav">
+      <li><a class="selected" href="home.html"><img src="images/home.png">    Dashboard</a></li>
+      <li><a href="PatientRecord.html"><img src="images/medical-history.png">  Register Patient</a> </li>
+      <li><a href="#"><img src="images/question.png"> Manage Appointment</a></li>
+      <li><a href="#"><img src="images/chat.png">  Forum</a></li>
+      <li><a href="#"><img src="images/news.png">  News</a></li>
+    </ul>
+    
+  </div>
+
+  <div class="content">
+    
+    
+    <h1>Patient Record</h1>
+    
+
+    <div id="box">
+     <div class="box-top">Patient Name</div>
+     <div class="box-panel" class name></div>
+    </div>
+
+   <div id="box">
+     <div class="box-top">I/C Number</div>
+     <div class="box-panel"></div>
+    </div>
+
+
+    <div id="box">
+     <div class="box-top">Address</div>
+     <div class="box-panel"></div>
+    </div>
+
+
+  </div>
+
+
+</div><!-- #container -->
+
+<script type="text/javascript">
+
+	$(document).ready(function(){
+     $("a.mobile").click(function(){
+      $(".sidebar").slideToggle('fast');
+     });
+
+    window.onresize = function(event) {
+      if($(window).width() > 480){
+      	$(".sidebar").show();
+      }
+    };
+
+
+	});
+
+</script>
+
+
+</body>
+</html>
